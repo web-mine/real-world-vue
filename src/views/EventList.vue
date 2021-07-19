@@ -8,17 +8,28 @@
 <script>
 // @ is an alias to /src
 import EventCard from "@/components/EventCard.vue";
+import EventService from "@/services/EventService.js";
 
 export default {
   name: "EventList",
   components: {
-    EventCard
+    EventCard,
   },
   data() {
     return {
       events: null,
-    }
-  }
+    };
+  },
+  created() {
+    EventService.getEvents()
+      .get("https://my-json-server.typicode.com/web-mine/real-world-vue/events")
+      .then((response) => {
+        this.events = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };
 </script>
 
