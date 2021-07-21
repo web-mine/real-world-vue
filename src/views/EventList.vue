@@ -22,7 +22,6 @@ export default {
   },
   created() {
     EventService.getEvents()
-      .get("https://my-json-server.typicode.com/web-mine/real-world-vue/events")
       .then((response) => {
         this.events = response.data;
       })
