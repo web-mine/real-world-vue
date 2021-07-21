@@ -9,12 +9,13 @@
 <script>
 import EventService from "@/services/EventService.js";
 export default {
+  props: ["id"],
   data() {
     return {
       event: [],
-      id: 5928101,
     };
   },
+
   created() {
     EventService.getEvent(this.id)
       .then((response) => {
