@@ -1,9 +1,11 @@
 <template>
-  <div class="event-card">
-    <!-- display event data -->
-    <span>@ {{ event.time }} on {{ event.date }}</span>
-    <h4>{{ event.title }}</h4>
-  </div>
+  <router-link to="/event/5928101">
+    <div class="event-card">
+      <!-- display event data -->
+      <span>@ {{ event.time }} on {{ event.date }}</span>
+      <h4>{{ event.title }}</h4>
+    </div>
+  </router-link>
 </template>
 
 <script>
